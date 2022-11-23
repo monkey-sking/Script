@@ -1,0 +1,64 @@
+#!name=APP启动页去广告
+#!desc=APP启动页去广告
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
+#!homepage=https://github.com/monkey-sking
+#!author=monkey-sking
+
+[MITM]
+hostname = res.xiaojukeji.com, acs.m.taobao.com, elemecdn.com, fuss10.elemecdn.com, m5.amap.com, gab.122.gov.cn, ad.12306.cn, mp.weixin.qq.com, gw.alicdn.com,  static.zhihu.com,
+[URL Rewrite]
+# ======= 0~9 ======= #
+# ======= A ======= #
+# > 阿里巴巴
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ reject
+# ======= B ======= #
+# ======= D ======= #
+# > 滴滴出行（推荐英文版）@ddgksf2013
+https?://res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
+https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices) reject
+# ======= E ======= #
+# > 饿了么
+^https?:\/\/elemecdn.com\/.+\/sitemap reject
+^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} reject
+^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} reject
+^https?:\/\/fuss10.elemecdn.com\/.+.mp4 reject
+^https?:\/\/www1.elecfans.com\/www\/delivery\/ reject
+# ======= F ======= #
+# ======= G ======= #
+# > 高德
+^https?:\/\/m5.amap.com\/ws\/valueadded\/ reject
+# ======= H ======= #
+# ======= I ======= #
+# ======= J ======= #
+
+# > 交管12123(需卸载重装)@kyle
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery reject
+# ======= K ======= #
+# ======= L ======= #
+# ======= M ======= #
+# ======= N ======= #
+# ======= O ======= #
+# ======= P ======= #
+# ======= Q ======= #
+# ======= R ======= #
+# ======= S ======= #
+# ======= T ======= #
+# > 铁路12306开屏广告(倒计时仍然存在）@ddgksf2013
+https://ad.12306.cn/* reject
+# ======= U ======= #
+# ======= V ======= #
+# ======= W ======= #
+# > 微信公众号图文
+^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad response-body "advertisement_num":\d,"advertisement_info":\[.+\], response-body "advertisement_num":0,"advertisement_info":[],
+# ======= X ======= #
+# > 闲鱼
+^https:\/\/gw.alicdn.com\/mt\/ reject
+^https:\/\/gw.alicdn.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw.alicdn.com\/tps\/.+\d{3,4}-\d{4} reject
+# ======= Y ======= #
+# ======= Z ======= #
+# > 知乎网页版强制登陆弹窗@HotKids
+^https?:\/\/static\.zhihu\.com\/[^\/]+\/(main|column)\.signflow\.[^.]+.js reject
+
+[Script]
+# 
