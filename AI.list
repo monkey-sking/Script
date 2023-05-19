@@ -3,7 +3,11 @@
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,bing.com  
+# DOMAIN-SUFFIX,bing.com  
+host-keyword, openai, OpenAI
+DOMAIN-SUFFIX, identrust.com
+
+
 #DOMAIN-KEYWORD,nicegram
 #IP-ASN,211157,no-resolve
 #IP-CIDR,109.239.140.0/24,no-resolve
