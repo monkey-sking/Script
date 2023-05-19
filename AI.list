@@ -4,7 +4,6 @@ DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,auth0.com
 # DOMAIN-SUFFIX,bing.com  
-host-keyword, openai, OpenAI
 DOMAIN-SUFFIX, identrust.com
 
 
